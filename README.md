@@ -3,9 +3,11 @@ Counter Widget is a simple widget made up of two buttons and a number input. Two
 
 ## Installation
 In terminal:
+
     pip install django-counter-widget
 
 Add the app in your INSTALLED_APPS settings
+
     INSTALLED_APPS = [
         ...
         'counter_widgets',
@@ -13,12 +15,14 @@ Add the app in your INSTALLED_APPS settings
 
 ## How To Use
 You can use the CounterWidget for your forms IntegerField.
+
     from counter_widgets import CounterWidget
 
     class YourForm(forms.Form):
         counter_field = forms.IntegerField(widget=CounterWidget)
 
 In the template where you are rendering YourForm, include the following line
+
     {% include "counter_widgets/counter_script.html" %}
 
 If you don't include the above line in the template where you are rendering the widget, the increment (+) and decrement (-) buttons will not work.
@@ -37,6 +41,7 @@ In the following we have customized counter widget increment_text, decrement_tex
         count = forms.IntegerField(widget=CustomCounterWidget)
 
 Another example
+
     class AnotherCustomCounterWidget(CounterWidget):
         increment_text = "Add Century"
         decrement_text = "Subtract Century"
