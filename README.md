@@ -1,6 +1,8 @@
 # Counter Widget
 Counter Widget is a simple widget made up of two buttons and a number input. Two buttons are used to increase and decrease the input value.
 
+![](https://github.com/AbdullahSaquib/django-counter-widget/blob/master/docs/SimpleCounter.gif)
+
 ## Installation
 In terminal:
 
@@ -38,7 +40,11 @@ In the following we have customized counter widget increment_text, decrement_tex
             increment_value=100,
             decrement_value=50))
 
+![](https://github.com/AbdullahSaquib/django-counter-widget/blob/master/docs/CustomCounter.gif)
+
 Another example
 
     class TestForm(forms.Form):
         count = forms.IntegerField(widget=CounterWidget(delta=100))
+
+![](https://github.com/AbdullahSaquib/django-counter-widget/blob/master/docs/Counter100.gif)
