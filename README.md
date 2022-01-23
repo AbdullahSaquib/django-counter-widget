@@ -30,19 +30,15 @@ If you don't include the above line in the template where you are rendering the 
 ## Customising the Widget
 You can create your own customized widget from Counterwidget. You can change increment text, decrement text, delta (increment/decrement amount default is 1), you can have different values ​​for increment and decrement.
 In the following we have customized counter widget increment_text, decrement_text, increment_value, decrement_value
-
-    class CustomCounterWidget(CounterWidget):
-        increment_text = "Add 100"
-        decrement_text = "Subtract 50"
-        increment_value = 100
-        decrement_value = 50
     
     class TestForm(forms.Form):
-        count = forms.IntegerField(widget=CustomCounterWidget)
+        count = forms.IntegerField(widget=CounterWidget(
+            increment_text="Add 100",
+            decrement_text="Subtract 50",
+            increment_value=100,
+            decrement_value=50))
 
 Another example
 
-    class AnotherCustomCounterWidget(CounterWidget):
-        increment_text = "Add Century"
-        decrement_text = "Subtract Century"
-        delta = 100
+    class TestForm(forms.Form):
+        count = forms.IntegerField(widget=CounterWidget(delta=100))
