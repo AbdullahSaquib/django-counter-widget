@@ -25,9 +25,12 @@ You can use the CounterWidget for your forms IntegerField.
 
 In the template where you are rendering YourForm, include the following line
 
-    {% include "counter_widgets/counter_script.html" %}
+    {{ form.media }}
 
-If you don't include the above line in the template where you are rendering the widget, the increment (+) and decrement (-) buttons will not work.
+where "form" is the name of the context variable that refers to the form containing the counter widget. If you do not include the above line in the template, the increase (+) and decrease (-) buttons will not work. 
+{{form.media}} will add the following line in the rendered HTML
+
+    <script src="/static/counter_widgets/js/counter.js"></script>
 
 ## Customising the Widget
 You can create your own customized widget from Counterwidget. You can change increment text, decrement text, delta (increment/decrement amount default is 1), you can have different values ​​for increment and decrement.

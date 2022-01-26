@@ -1,7 +1,10 @@
-from django.forms import NumberInput
+from django.forms import Widget
 
 
-class CounterWidget(NumberInput):
+class CounterWidget(Widget):
+    class Media:
+        js = ('counter_widgets/js/counter.js',)
+
     template_name = "counter_widgets/counter.html"
     counter_class = "counter"
     decrement_class = "decrement"
